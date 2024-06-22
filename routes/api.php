@@ -8,4 +8,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/midtrans-callback', [OrderController::class, 'callback']);
+Route::post('/midtrans-callback', [App\Http\Controllers\Api\PostController::class, 'callback']);
+Route::apiResource('/posts', App\Http\Controllers\Api\PostController::class);
